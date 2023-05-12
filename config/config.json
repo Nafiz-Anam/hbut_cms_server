@@ -1,0 +1,23 @@
+{
+    "development": {
+        "username": "agilixso_nafiz",
+        "password": "Nafiz@1122",
+        "database": "agilixso_hbut",
+        "host": "65.108.234.229",
+        "table_prefix": "hb_"
+    },
+    "test": {
+        "username": "root",
+        "password": null,
+        "database": "women_venus",
+        "host": "127.0.0.1",
+        "table_prefix": "alpha_"
+    },
+    "production": {
+        "username": "root",
+        "password": null,
+        "database": "women_venus",
+        "host": "127.0.0.1",
+        "table_prefix": "alpha_"
+    }
+}
