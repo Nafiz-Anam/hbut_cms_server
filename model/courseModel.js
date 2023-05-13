@@ -36,13 +36,27 @@ var dbModel = {
         return response;
     },
 
-    // delete: async (condition) => {
-    //     let qb = await pool.get_connection();
-    //     let response = await qb.where(condition).delete(dbtable);
-    //     qb.release();
-    //     console.log(qb.last_query());
-    //     return response;
-    // },
+    delete: async (condition) => {
+        let qb = await pool.get_connection();
+        let response = await qb.where(condition).delete(dbtable);
+        qb.release();
+        console.log(qb.last_query());
+        return response;
+    },
+
+    select: async (condition) => {
+        let qb = await pool.get_connection();
+        let response = await qb.select("*").where(condition).get(dbtable);
+        qb.release();
+        return response;
+    },
+
+    update: async (condition, data) => {
+        let qb = await pool.get_connection();
+        let response = await qb.set(data).where(condition).update(dbtable);
+        qb.release();
+        return response;
+    },
 
     // select_limit: async (condition, limit) => {
     //     let qb = await pool.get_connection();
@@ -52,13 +66,6 @@ var dbModel = {
     //         .order_by("designation", "asc")
     //         .limit(limit.perpage, limit.start)
     //         .get(dbtable);
-    //     qb.release();
-    //     return response;
-    // },
-
-    // select: async (condition) => {
-    //     let qb = await pool.get_connection();
-    //     let response = await qb.select("*").where(condition).get(dbtable);
     //     qb.release();
     //     return response;
     // },
@@ -109,12 +116,6 @@ var dbModel = {
     //     let response = await qb.select(selection).where(condition).get(dbtable);
     //     qb.release();
     //     return response[0];
-    // },
-    // updateDetails: async (condition, data) => {
-    //     let qb = await pool.get_connection();
-    //     let response = await qb.set(data).where(condition).update(dbtable);
-    //     qb.release();
-    //     return response;
     // },
 };
 
