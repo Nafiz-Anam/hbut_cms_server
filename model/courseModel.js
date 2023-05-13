@@ -2,6 +2,7 @@ require("dotenv").config();
 const env = process.env.ENVIRONMENT;
 const config = require("../config/config.json")[env];
 const pool = require("../config/database");
+const helpers = require("../utilities/helper/general_helper");
 const dbtable = config.table_prefix + "courses";
 
 var dbModel = {
@@ -18,8 +19,8 @@ var dbModel = {
 
         if (Object.keys(filter_condition).length) {
             if (final_cond == " where ") {
-                final_cond =
-                    final_cond + ` course_type = ${filter_condition?.type}`;
+                let filter_str = await helpers.get_and_conditional_string(filter_condition);
+                final_cond = final_cond + filter_str;
             }
         }
 

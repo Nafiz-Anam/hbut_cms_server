@@ -5,6 +5,15 @@ var UserController = {
     getList: async (req, res) => {
         try {
             let filter = {};
+            if (req.bodyString("course_type")) {
+                filter.course_type = req.bodyString("course_type");
+            }
+            if (req.bodyString("course_name")) {
+                filter.name = req.bodyString("course_name");
+            }
+            if (req.bodyString("course_teacher")) {
+                filter.teacher = req.bodyString("course_teacher");
+            }
 
             CourseModel.select_list(filter)
                 .then(async (result) => {
