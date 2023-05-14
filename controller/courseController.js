@@ -1,7 +1,7 @@
 require("dotenv").config();
 const CourseModel = require("../model/courseModel");
 
-var UserController = {
+var CourseController = {
     getList: async (req, res) => {
         try {
             let filter = {};
@@ -219,4 +219,4 @@ var UserController = {
     },
 };
 
-module.exports = UserController;
+module.exports = CourseController;
