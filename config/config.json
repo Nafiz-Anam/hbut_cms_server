@@ -1,9 +1,9 @@
 {
     "development": {
-        "username": "agilixso_nafiz",
+        "username": "u575513417_hbut_db",
         "password": "Nafiz@1122",
-        "database": "agilixso_hbut",
-        "host": "65.108.234.229",
+        "database": "u575513417_hbut_db",
+        "host": "srv909.hstgr.io",
         "table_prefix": "hb_"
     },
     "test": {
